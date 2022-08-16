@@ -31,7 +31,7 @@ display_name        = "segment1"
   transport_zone_path = data.nsxt_policy_transport_zone.this.path
 
   subnet {
-    cidr = "192.168.250.0/24"
+    cidr = "192.168.250.1/24"
     dhcp_ranges = ["192.168.250.10-192.168.250.100"]
     dhcp_v4_config {
       server_address = "192.168.250.2/24"

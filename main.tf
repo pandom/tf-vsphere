@@ -23,6 +23,6 @@ provider "nsxt" {
   allow_unverified_ssl = var.allow_unverified_ssl
   host = var.nsx_server
   max_retries = 3
-  username = "admin"
+  username = var.nsx_user
   
 }

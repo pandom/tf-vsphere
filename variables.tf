@@ -26,3 +26,10 @@ variable "nsx_server" {
     description = "NSX server FQDN"
     #default = "https://nsx-98984.fe9dbbb3.asia-southeast1.gve.goog/"
 }
+
+variable "nsx_user" {
+    type = string
+    description = "default NSX User"
+    default = "admin"
+  
+}

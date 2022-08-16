@@ -24,6 +24,19 @@ resource "nsxt_policy_tier1_gateway" "this" {
     pool_allocation           = "ROUTING"
 }
 
+resource "nsxt_dhcp_server_profile" "this" {
+  edge_cluster_id = nsxt_policy_edge_cluster.this.id
+}
+
+resource "nsxt_logical_dhcp_server" "this" {
+  display_name     = "logical_dhcp_server"
+  description      = "logical_dhcp_server provisioned by Terraform"
+  dhcp_profile_id  = nsxt_dhcp_server_profile.this.id
+  dhcp_server_ip   = "192.168.1.2/24"
+  gateway_ip       = "192.168.1.1"
+  domain_name      = "abc.com"
+  dns_name_servers = ["1.1.1.1"]
+}
 resource "nsxt_policy_segment" "segment1" {
 display_name        = "segment1"
   description         = "Terraform provisioned Segment"

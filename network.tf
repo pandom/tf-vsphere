@@ -25,7 +25,7 @@ resource "nsxt_policy_tier1_gateway" "this" {
 }
 
 resource "nsxt_dhcp_server_profile" "this" {
-  edge_cluster_id = nsxt_policy_edge_cluster.this.id
+  edge_cluster_id = data.nsxt_policy_edge_cluster.this.id
 }
 
 resource "nsxt_logical_dhcp_server" "this" {

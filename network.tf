@@ -32,7 +32,6 @@ resource "nsxt_logical_dhcp_server" "this" {
   display_name     = "logical_dhcp_server"
   description      = "logical_dhcp_server provisioned by Terraform"
   dhcp_profile_id  = nsxt_dhcp_server_profile.this.id
-  dhcp_server_ip   = "192.168.1.2/24"
   gateway_ip       = "192.168.1.1"
   domain_name      = "abc.com"
   dns_name_servers = ["1.1.1.1"]
@@ -43,14 +42,14 @@ display_name        = "segment1"
   connectivity_path   = nsxt_policy_tier1_gateway.this.path
   transport_zone_path = data.nsxt_policy_transport_zone.this.path
 
-#   subnet {
-#     cidr = "192.168.250.1/24"
-#     dhcp_ranges = ["192.168.250.10-192.168.250.100"]
-#     dhcp_v4_config {
-#       server_address = "192.168.250.2/24"
-#       lease_time     = 36000
-#     }
-# }
+  subnet {
+    cidr = "192.168.250.1/24"
+    dhcp_ranges = ["192.168.250.10-192.168.250.100"]
+    dhcp_v4_config {
+      server_address = "192.168.250.2/24"
+      lease_time     = 36000
+    }
+}
 }
 resource "nsxt_policy_tier1_gateway_interface" "this" {
   display_name           = "segment1_interface"

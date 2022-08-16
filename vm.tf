@@ -6,3 +6,7 @@ resource "vsphere_folder" "this" {
   type = "vm"
   datacenter_id = data.vsphere_datacenter.this.id
 }
+
+
+# Create a 
+

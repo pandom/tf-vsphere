@@ -6,7 +6,7 @@ data "nsxt_policy_edge_cluster" "this" {
   display_name = "edge-cluster"
 }
 
-data "nsxt_transport_zone" "this" {
+data "nsxt_policy_transport_zone" "this" {
   display_name = "TZ-OVERLAY"
 }
 

@@ -43,7 +43,7 @@ display_name        = "segment1"
 resource "nsxt_policy_tier1_gateway_interface" "this" {
   display_name           = "segment1_interface"
   description            = "connection to segment1"
-  gateway_path           = data.nsxt_policy_tier1_gateway.this.path
+  gateway_path           = nsxt_policy_tier1_gateway.this.path
   segment_path           = nsxt_policy_segment.segment1.path
   subnets                = ["192.168.250.0/24"]
   mtu                    = 1500

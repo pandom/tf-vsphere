@@ -9,7 +9,7 @@ variable "working_folder" {
     default = "go"
   }
 
-variable "vsphere_insecure" {
+variable "allow_unverified_ssl" {
   type        = bool
   description = "Allow insecure connections. Set to `true` for self-signed certificates."
   default     = false

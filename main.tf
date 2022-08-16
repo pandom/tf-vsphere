@@ -5,7 +5,7 @@ terraform {
       version = "2.2.0"
       #ENVARS OR VARSETS for credentials
     }
-    nsx = {
+    nsxt = {
       source = "vmware/nsxt"
       version = "3.2.8"
     }

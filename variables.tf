@@ -15,11 +15,11 @@ variable "allow_unverified_ssl" {
   default     = false
 }
 
-# variable "vsphere_server" {
-#     type = string
-#     description = "vsphere server FQDN"
-#     #default = "https://vcsa-98975.fe9dbbb3.asia-southeast1.gve.goog"
-# }
+variable "vsphere_server" {
+    type = string
+    description = "vsphere server FQDN"
+    #default = "https://vcsa-98975.fe9dbbb3.asia-southeast1.gve.goog"
+}
 
 # variable "vsphere_password" {
 #     type = string

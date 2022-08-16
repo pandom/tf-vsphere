@@ -6,6 +6,10 @@ data "nsxt_policy_edge_cluster" "this" {
   display_name = "edge-cluster"
 }
 
+data "nsxt_transport_zone" "this" {
+  display_name = "TZ-OVERLAY"
+}
+
 resource "nsxt_policy_tier1_gateway" "this" {
     description               = "Tier-1 provisioned by Terraform"
     display_name              = "tier1-go-telstra"
@@ -23,8 +27,8 @@ resource "nsxt_policy_tier1_gateway" "this" {
 resource "nsxt_policy_segment" "segment1" {
 display_name        = "segment1"
   description         = "Terraform provisioned Segment"
-  connectivity_path   = nsxt_policy_tier1_gateway.mygateway.path
-  transport_zone_path = data.nsxt_policy_transport_zone.overlay_tz.path
+  connectivity_path   = nsxt_policy_tier1_gateway.this.path
+  transport_zone_path = data.nsxt_policy_transport_zone.this.path
 
   subnet {
     cidr = "192.168.250.0/24"

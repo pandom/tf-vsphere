@@ -40,13 +40,3 @@ variable "template" {
   default     = "linux-ubuntu-server-20-04-lts-1652801880"
 
 }
-
-variable "tags" {
-  type = map
-  description = "default tags"
-  default = [
-    "terraform": "managed",
-    "burkey": "demo"
-  ]
-  
-}

@@ -18,18 +18,25 @@ variable "allow_unverified_ssl" {
 variable "vsphere_server" {
     type = string
     description = "vsphere server FQDN"
-    #default = "https://vcsa-98975.fe9dbbb3.asia-southeast1.gve.goog"
+    default = "vcsa-98975.fe9dbbb3.asia-southeast1.gve.goog"
 }
 
 variable "nsx_server" {
     type = string
     description = "NSX server FQDN"
-    #default = "https://nsx-98984.fe9dbbb3.asia-southeast1.gve.goog/"
+    default = "nsx-98984.fe9dbbb3.asia-southeast1.gve.goog"
 }
 
 variable "nsx_user" {
     type = string
     description = "default NSX User"
     default = "admin"
+  
+}
+
+variable "template" {
+    type = string
+    description = "Current Image"
+    default = "linux-ubuntu-server-20-04-lts-1652801880"
   
 }

@@ -1,4 +1,11 @@
 terraform {
+  cloud {
+    organization = "burkey"
+    workspaces {
+      #tags = ["vsphere","google","seasia"]
+      name = "tf-vsphere"
+    }
+  }
   required_providers {
     vsphere = {
       source = "hashicorp/vsphere"
@@ -10,6 +17,7 @@ terraform {
       version = "3.2.8"
     }
   }
+  
 }
 
 provider "vsphere" {
@@ -21,7 +29,7 @@ provider "vsphere" {
 
 provider "nsxt" {
   allow_unverified_ssl = var.allow_unverified_ssl
-  host = var.nsx_server
+  #host = var.nsx_server
   max_retries = 3
   username = var.nsx_user
   

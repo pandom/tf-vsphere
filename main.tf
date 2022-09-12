@@ -29,7 +29,7 @@ provider "vsphere" {
 
 provider "nsxt" {
   allow_unverified_ssl = var.allow_unverified_ssl
-  #host = var.nsx_server
+  host = var.nsx_server
   max_retries = 3
   username = var.nsx_user
   

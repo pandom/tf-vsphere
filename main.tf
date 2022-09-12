@@ -8,16 +8,16 @@ terraform {
   }
   required_providers {
     vsphere = {
-      source = "hashicorp/vsphere"
+      source  = "hashicorp/vsphere"
       version = "2.2.0"
       #ENVARS OR VARSETS for credentials
     }
     nsxt = {
-      source = "vmware/nsxt"
+      source  = "vmware/nsxt"
       version = "3.2.8"
     }
   }
-  
+
 }
 
 provider "vsphere" {
@@ -29,8 +29,8 @@ provider "vsphere" {
 
 provider "nsxt" {
   allow_unverified_ssl = var.allow_unverified_ssl
-  host = var.nsx_server
-  max_retries = 3
-  username = var.nsx_user
-  
+  host                 = var.nsx_server
+  max_retries          = 3
+  username             = var.nsx_user
+
 }

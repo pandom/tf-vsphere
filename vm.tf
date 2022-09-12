@@ -1,12 +1,26 @@
-module vsphere_machine {
-  source = "app.terraform.io/burkey/module-virtual-machine/vsphere"
+module "vsphere_machine" {
+  source  = "app.terraform.io/burkey/module-virtual-machine/vsphere"
   version = "1.1.2"
 
-  datacenter                = var.datacenter
-  cluster                   = "Cluster"
+  datacenter        = var.datacenter
+  cluster           = "Cluster"
   primary_datastore = "vsanDatastore"
-  networks                  = {
-    "seg-general":"dhcp"
+  networks = {
+    "seg-general" : "dhcp"
   }
-  template                  = var.template
+  template = var.template
+  tags     = var.tags
+}
+module "vsphere_machine" {
+  source  = "app.terraform.io/burkey/module-virtual-machine/vsphere"
+  version = "1.1.2"
+
+  datacenter        = var.datacenter
+  cluster           = "Cluster"
+  primary_datastore = "vsanDatastore"
+  networks = {
+    "seg-general" : "dhcp"
+  }
+  template = var.template
+  tags     = var.tags
 }

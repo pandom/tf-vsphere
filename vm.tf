@@ -1,4 +1,4 @@
-module "vsphere_machine" "web" {
+module "vsphere_app" {
   source  = "app.terraform.io/burkey/module-virtual-machine/vsphere"
   version = "1.1.2"
 
@@ -10,7 +10,7 @@ module "vsphere_machine" "web" {
   }
   template = var.template
 }
-module "vsphere_machine" "app" {
+module "vsphere_web" {
   source  = "app.terraform.io/burkey/module-virtual-machine/vsphere"
   version = "1.1.2"
 

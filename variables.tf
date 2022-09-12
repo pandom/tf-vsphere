@@ -44,9 +44,9 @@ variable "template" {
 variable "tags" {
   type = map
   description = "default tags"
-  default = {
+  default = [
     "terraform": "managed",
     "burkey": "demo"
-  }
+  ]
   
 }

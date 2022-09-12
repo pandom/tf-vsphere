@@ -9,7 +9,6 @@ module "vsphere_machine" "web" {
     "seg-general" : "dhcp"
   }
   template = var.template
-  tags     = var.tags
 }
 module "vsphere_machine" "app" {
   source  = "app.terraform.io/burkey/module-virtual-machine/vsphere"
@@ -22,5 +21,4 @@ module "vsphere_machine" "app" {
     "seg-general" : "dhcp"
   }
   template = var.template
-  tags     = var.tags
 }

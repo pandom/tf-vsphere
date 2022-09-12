@@ -12,10 +12,10 @@ terraform {
       version = "2.2.0"
       #ENVARS OR VARSETS for credentials
     }
-    nsxt = {
-      source = "vmware/nsxt"
-      version = "3.2.8"
-    }
+    # nsxt = {
+    #   source = "vmware/nsxt"
+    #   version = "3.2.8"
+    # }
   }
   
 }
@@ -27,10 +27,10 @@ provider "vsphere" {
   allow_unverified_ssl = var.allow_unverified_ssl
 }
 
-provider "nsxt" {
-  allow_unverified_ssl = var.allow_unverified_ssl
-  #host = var.nsx_server
-  max_retries = 3
-  username = var.nsx_user
+# provider "nsxt" {
+#   allow_unverified_ssl = var.allow_unverified_ssl
+#   #host = var.nsx_server
+#   max_retries = 3
+#   username = var.nsx_user
   
-}
+# }

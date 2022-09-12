@@ -4,7 +4,7 @@ module vsphere_machine {
 
   datacenter                = var.datacenter
   cluster                   = "Cluster"
-  primary_datastore_cluster = "vsanDatastore"
+  primary_datastore = "vsanDatastore"
   networks                  = {
     "seg-general":"dhcp"
   }

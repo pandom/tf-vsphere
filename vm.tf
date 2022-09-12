@@ -1,5 +1,6 @@
 module vsphere_machine {
-  source = "app.terraform.io/burkey/terraform-vsphere-module-virtual-machine/vsphere"
+  source = "app.terraform.io/burkey/module-virtual-machine/vsphere"
+  version = "1.1.2"
 
   datacenter                = var.datacenter
   cluster                   = "Cluster"

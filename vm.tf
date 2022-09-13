@@ -22,3 +22,16 @@ module "vsphere_web" {
   }
   template = var.template
 }
+
+module "vsphere_live" {
+  source  = "app.terraform.io/burkey/module-virtual-machine/vsphere"
+  version = "1.1.2"
+  hostname = "burkey"
+  datacenter        = var.datacenter
+  cluster           = "Cluster"
+  primary_datastore = "vsanDatastore"
+  networks = {
+    "seg-general" : "dhcp"
+  }
+  template = var.template
+}

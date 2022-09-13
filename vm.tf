@@ -10,18 +10,6 @@ module "vsphere_app" {
   }
   template = var.template
 }
-module "vsphere_web" {
-  source  = "app.terraform.io/burkey/module-virtual-machine/vsphere"
-  version = "1.1.2"
-
-  datacenter        = var.datacenter
-  cluster           = "Cluster"
-  primary_datastore = "vsanDatastore"
-  networks = {
-    "seg-general" : "dhcp"
-  }
-  template = var.template
-}
 
 module "vsphere_live" {
   source  = "app.terraform.io/burkey/module-virtual-machine/vsphere"
